@@ -1,0 +1,15 @@
+# Ignore all `~/.config` files and folders...
+/*
+
+# ... except ...
+!.gitignore
+
+# ... except.
+!i3
+!nvim
+!tmux
+!dunst
+!picom
+
+# And ignore compiled nvim file.
+nvim/plugin/packer_compiled.lua

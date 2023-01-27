@@ -7,6 +7,12 @@ set $down j
 set $left h
 set $right l
 
+# Controls speeds of auto-repeat actions.
+# For example, the speed at which the cursor repeats the action of deleting a character while <Backspace> is pressed and so on.
+# - 250ms to start the auto-repeat action.
+# - 40ms to retry the action after it started.
+set $xset_rate xset r rate 200 40
+
 
 
 # Font.
@@ -18,9 +24,7 @@ default_orientation horizontal
 # Popups during fullscreen mode.
 popup_during_fullscreen smart
 
-# 250ms to start cursor move. Decrease for little start time for moving.
-# 40ms repeat delay. Increase for more cursor moving speed.
-exec --no-startup-id xset r rate 250 40
+exec --no-startup-id $xset_rate
 
 
 
@@ -41,6 +45,8 @@ include $HOME/.config/i3/statusbar.conf
 
 # Force Fix keyboard layout and swap CAPS with Left CTRL.
 bindsym $mod+F1 exec --no-startup-id setxkbmap -option ctrl:nocaps -layout us -variant intl
+# Force Fix auto-repeat configs.
+bindsym $mod+F2 exec --no-startup-id $xset_rate
 
 # Restart i3 inplace.
 bindsym $mod+Shift+r restart

@@ -22,9 +22,10 @@ keymap.set('n', 'zM', require('ufo').closeAllFolds)
 -- Tree files view
 keymap.set("n", "<leader><Tab>", ":NvimTreeToggle<CR>")
 keymap.set("n", "<leader>ff", ":NvimTreeFindFile<CR>")
+keymap.set("n", "<leader>tc", ":NvimTreeCollapse<CR>")
 
 -- Tabs: Open current buffer in another tab.
-keymap.set("n", "te", ":tabe %<CR>")
+keymap.set("n", "te", ":tabedit %<CR>")
 -- Tabs: Close current tab.
 keymap.set("n", "tq", ":tabclose<CR>")
 -- Tabs: Open a empty tab.

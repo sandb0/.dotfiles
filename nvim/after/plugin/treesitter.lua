@@ -1,6 +1,28 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "regex", "graphql", "json", "yaml", "css", "html", "help", "javascript", "typescript", "c", "lua",
-    "vim", "help" },
+  ensure_installed = {
+    "javascript",
+    "typescript",
+    "rust",
+    "go",
+    "c",
+    "lua",
+    "elixir",
+    "erlang",
+    "haskell",
+    "heex",
+    "eex",
+    "css",
+    "html",
+    "json",
+    "yaml",
+    "regex",
+    "graphql",
+    "vim",
+    "help"
+  },
+
+  -- If necessary, remove all: `:TSUninstall all`.
+  -- ensure_installed = "all",
 
   sync_install = false,
 

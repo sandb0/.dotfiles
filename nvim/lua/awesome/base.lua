@@ -9,6 +9,11 @@ vim.bo.autoread = true
 -- Theme color variant: light, dark.
 opt.background = 'dark'
 
+
+-- Spell check.
+opt.spell = true
+opt.spelllang = "en_us,pt_br"
+
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 vim.o.foldcolumn = '1'

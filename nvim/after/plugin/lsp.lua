@@ -3,10 +3,16 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-  'tsserver',
   'sumneko_lua',
-  'graphql',
+  'tsserver',
   'eslint',
+  'jsonls',
+  'graphql',
+  'rust_analyzer',
+  'taplo',
+  'gopls',
+  'hls',
+  'elixirls'
 })
 
 local cmp = require('cmp')
@@ -36,6 +42,14 @@ lsp.on_attach(function()
   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+-- lsp.configure('hls', {
+--   settings = {
+--     haskell = {
+--       formattingProvider = 'stylish-haskell',
+--     },
+--   },
+-- })
 
 lsp.setup()
 

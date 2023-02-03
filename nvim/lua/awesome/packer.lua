@@ -80,4 +80,7 @@ return require('packer').startup(function(use)
   use 'mg979/vim-visual-multi'
   use 'axelvc/template-string.nvim'
   use 'lewis6991/gitsigns.nvim'
+
+  -- Spell check Hue BR.
+  use 'mateusbraga/vim-spell-pt-br'
 end)

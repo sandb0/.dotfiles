@@ -9,6 +9,7 @@ vim.bo.autoread = true
 -- Theme color variant: light, dark.
 opt.background = 'dark'
 
+vim.opt.guicursor = "a:blinkon1"
 
 -- Spell check.
 opt.spell = true

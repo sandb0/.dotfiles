@@ -63,6 +63,11 @@ return require('packer').startup(function(use)
 
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
   --use 'gcmt/wildfire.vim'
   --use 'tpope/vim-surround'
   -- use 'j-hui/fidget.nvim'

@@ -40,6 +40,7 @@ keymap.set('n', '{{', '<Cmd>bprev<CR>')
 keymap.set('n', '}}', '<Cmd>bnext<CR>')
 
 -- Move line limits
+-- @TODO - For while don't working on Multi-cursor Normal Mode
 keymap.set('n', 'H', '^')
 keymap.set('n', 'L', '$')
 keymap.set('v', 'H', '^')

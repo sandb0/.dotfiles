@@ -33,8 +33,8 @@ exec --no-startup-id $xset_rate
 
 
 # Third programs autostart.
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id feh --bg-fill $HOME/.local/share/backgrounds/19.png
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf --experimental-backends
+exec_always --no-startup-id feh --bg-fill $HOME/.local/share/backgrounds/54.png
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunst.dunstrc
 
 

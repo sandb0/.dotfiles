@@ -1,5 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
+    -- "html",
     "javascript",
     "typescript",
     "rust",
@@ -12,7 +13,6 @@ require 'nvim-treesitter.configs'.setup {
     "heex",
     "eex",
     "css",
-    "html",
     "json",
     "yaml",
     "regex",

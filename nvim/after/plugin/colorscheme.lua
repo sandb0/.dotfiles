@@ -1,6 +1,3 @@
--- !! Unloaded config file !! --
--- Use on `awesome/init.lua` --
-
 function UseRosePineColors()
   color = color or "rose-pine"
   vim.cmd.colorscheme(color)
@@ -15,6 +12,11 @@ function UseEverforestColors()
   vim.cmd.colorscheme(color)
 
   vim.g.everforest_background = 'hard'
+
+  -- Working good only in `vim.opt.background`: dark.
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
   -- vim.g.everforest_diagnostic_line_highlight = 1
   -- vim.g.everforest_diagnostic_text_highlight = 1
   -- vim.g.everforest_diagnostic_virtual_text = 'colored'

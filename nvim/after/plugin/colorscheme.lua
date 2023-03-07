@@ -47,4 +47,4 @@ end
 
 -- UseEverforestColors()
 
-UseRosePineColors()
+-- UseRosePineColors()

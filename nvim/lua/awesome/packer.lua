@@ -8,13 +8,13 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    config = function()
-      vim.cmd('colorscheme rose-pine')
-    end
-  })
+  -- use({
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   config = function()
+  --     vim.cmd('colorscheme rose-pine')
+  --   end
+  -- })
   -- use({
   --   'sainnhe/everforest',
   --   as = 'everforest',
@@ -22,6 +22,13 @@ return require('packer').startup(function(use)
   --     vim.cmd('colorscheme everforest')
   --   end
   -- })
+  use({
+    'ellisonleao/gruvbox.nvim',
+    as = 'gruvbox',
+    config = function()
+      vim.cmd('colorscheme gruvbox')
+    end
+  })
 
   use {
     'VonHeikemen/lsp-zero.nvim',

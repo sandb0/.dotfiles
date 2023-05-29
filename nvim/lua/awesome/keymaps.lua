@@ -11,6 +11,8 @@ vim.g.mapleader = " "
 
 -- Git fugitive
 keymap.set("n", "<leader>gs", vim.cmd.Git);
+keymap.set("n", "g2", "<cmd>diffget //2<CR>");
+keymap.set("n", "g3", "<cmd>diffget //3<CR>");
 
 -- Undotree
 keymap.set("n", "<leader>u", "<Cmd>UndotreeToggle<CR><C-w>w")

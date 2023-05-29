@@ -3,16 +3,16 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-    -- 'sumneko_lua',
-    'tsserver',
-    'eslint',
-    'jsonls',
-    'graphql',
-    'rust_analyzer',
-    'taplo',
-    'gopls',
-    'hls',
-    'elixirls'
+  -- 'sumneko_lua',
+  'tsserver',
+  'eslint',
+  'jsonls',
+  'graphql',
+  'rust_analyzer',
+  'taplo',
+  'gopls',
+  'hls',
+  'elixirls'
 })
 
 -- Disable deprecated 'sumneko_lua'. Use `lua_ls` instead.
@@ -21,20 +21,21 @@ lsp.skip_server_setup({ 'sumneko_lua' })
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
-    })
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<C-Space>'] = cmp.mapping.complete(),
+})
 
 lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+  mapping = cmp_mappings
 })
 
 lsp.on_attach(function()
   local opts = { buffer = bufnr, noremap = true, silent = true }
 
   vim.keymap.set("n", "<leader>gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
+  vim.keymap.set("n", "<leader>gr", "<Cmd>Telescope lsp_references<CR>", opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<C-j>", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -55,14 +56,21 @@ end)
 -- })
 
 lsp.configure('lua_ls', {
-    settings = {
-        Lua = { completion = { callSnippet = "Replace" } }
-    },
+  settings = {
+    Lua = { completion = { callSnippet = "Replace" } }
+  },
 })
+
+lsp.configure('yamlls', {
+  settings = {
+    yaml = { keyOrdering = false }
+  },
+})
+
 
 lsp.setup()
 
 -- Display diagnostic on editor.
 vim.diagnostic.config({
-    virtual_text = true,
+  virtual_text = true,
 })

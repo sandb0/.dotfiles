@@ -22,11 +22,18 @@ return require('packer').startup(function(use)
   --     vim.cmd('colorscheme everforest')
   --   end
   -- })
+  -- use({
+  --   'ellisonleao/gruvbox.nvim',
+  --   as = 'gruvbox',
+  --   config = function()
+  --     vim.cmd('colorscheme gruvbox')
+  --   end
+  -- })
   use({
-    'ellisonleao/gruvbox.nvim',
-    as = 'gruvbox',
+    'projekt0n/github-nvim-theme',
+    as = 'github-theme',
     config = function()
-      vim.cmd('colorscheme gruvbox')
+      vim.cmd('colorscheme github_light')
     end
   })
 

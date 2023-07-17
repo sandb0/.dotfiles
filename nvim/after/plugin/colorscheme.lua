@@ -45,6 +45,16 @@ function UseEverforestColors()
   -- })
 end
 
+function UseGruvboxColors()
+  vim.cmd('colorscheme gruvbox')
+  vim.cmd('highlight clear SignColumn')
+  vim.cmd('highlight clear GitSignsAdd')
+  vim.cmd('highlight clear GitSignsChange')
+  vim.cmd('highlight clear GitSignsDelete')
+end
+
+UseGruvboxColors()
+
 -- UseEverforestColors()
 
 -- UseRosePineColors()

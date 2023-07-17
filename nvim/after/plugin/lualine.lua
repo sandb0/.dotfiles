@@ -4,11 +4,12 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    -- theme = 'solarized_dark',
-    theme = 'gruvbox_dark',
+    -- theme = '16color',
+    theme = 'horizon',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
-    disabled_filetypes = {}
+    disabled_filetypes = {},
+    globalstatus = true
   },
   sections = {
     lualine_a = { 'mode' },
@@ -19,12 +20,21 @@ lualine.setup {
       path = 1
     } },
     lualine_x = {
-      { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
-        hint = ' ' } },
+      {
+        'diagnostics',
+        sources = { "nvim_diagnostic" },
+        symbols = {
+          error = ' ',
+          warn = ' ',
+          info = ' ',
+          hint = ' '
+        }
+      },
       'encoding',
       'filetype',
     },
-    lualine_y = { 'progress' },
+    -- lualine_y = { 'progress' },
+    lualine_y = { '' },
     lualine_z = { 'location' }
   },
   inactive_sections = {

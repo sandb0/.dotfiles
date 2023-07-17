@@ -17,7 +17,7 @@ opt.spelllang = "en_us,pt_br"
 
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
-vim.o.foldcolumn = '1'
+vim.o.foldcolumn = '0'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
@@ -58,7 +58,8 @@ opt.scrolloff = 10
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.updatetime = 50
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
+opt.colorcolumn = ""
 opt.cursorline = true
 opt.winblend = 0
 opt.wildoptions = 'pum'

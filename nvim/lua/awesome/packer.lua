@@ -22,20 +22,20 @@ return require('packer').startup(function(use)
   --     vim.cmd('colorscheme everforest')
   --   end
   -- })
-  -- use({
-  --   'ellisonleao/gruvbox.nvim',
-  --   as = 'gruvbox',
-  --   config = function()
-  --     vim.cmd('colorscheme gruvbox')
-  --   end
-  -- })
   use({
-    'projekt0n/github-nvim-theme',
-    as = 'github-theme',
+    'ellisonleao/gruvbox.nvim',
+    as = 'gruvbox',
     config = function()
-      vim.cmd('colorscheme github_light')
+      vim.cmd('colorscheme gruvbox')
     end
   })
+  -- use({
+  --   'projekt0n/github-nvim-theme',
+  --   as = 'github-theme',
+  --   config = function()
+  --     vim.cmd('colorscheme github_dark_colorblind')
+  --   end
+  -- })
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -84,7 +84,10 @@ return require('packer').startup(function(use)
 
   --use 'gcmt/wildfire.vim'
   --use 'tpope/vim-surround'
-  -- use 'j-hui/fidget.nvim'
+  use {
+    'j-hui/fidget.nvim',
+    tag = 'legacy'
+  }
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'kyazdani42/nvim-web-devicons'

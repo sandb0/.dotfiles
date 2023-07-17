@@ -39,8 +39,8 @@ lsp.on_attach(function()
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<C-j>", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "<leader>h", function() vim.diagnostic.goto_prev() end, opts)
+  vim.keymap.set("n", "<leader>l", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
@@ -67,6 +67,21 @@ lsp.configure('yamlls', {
   },
 })
 
+lsp.configure('tsserver', {
+  settings = {
+    typescript = {
+      snippetSupport = false
+    }
+  }
+})
+
+lsp.configure('jsonls', {
+  settings = {
+    json = {
+      snippetSupport = false
+    }
+  }
+})
 
 lsp.setup()
 

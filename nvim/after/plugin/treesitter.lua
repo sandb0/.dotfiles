@@ -18,6 +18,9 @@ require 'nvim-treesitter.configs'.setup {
     "regex",
     "graphql",
     "vim",
+  },
+
+  ignore_install = {
     "help"
   },
 

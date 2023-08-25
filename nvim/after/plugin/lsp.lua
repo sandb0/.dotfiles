@@ -31,7 +31,7 @@ lsp.setup_nvim_cmp({
   mapping = cmp_mappings
 })
 
-lsp.on_attach(function()
+lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, noremap = true, silent = true }
 
   vim.keymap.set("n", "<leader>gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
@@ -56,8 +56,22 @@ end)
 -- })
 
 lsp.configure('lua_ls', {
+  capabilities = {
+    textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = false
+        }
+      }
+    }
+  },
   settings = {
-    Lua = { completion = { callSnippet = "Replace" } }
+    Lua = {
+      completion = { callSnippet = "Replace" },
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
   },
 })
 
@@ -81,6 +95,26 @@ lsp.configure('jsonls', {
       snippetSupport = false
     }
   }
+})
+
+lsp.configure('clangd', {
+  capabilities = {
+    offsetEncoding = { 'utf-16' }
+  },
+})
+
+-- Still do not disable the snippets in Rust. :(
+lsp.configure('rust_analyzer', {
+  capabilities = {
+    textDocument = {
+      completion = {
+        snippetSupport = false,
+        completionItem = {
+          snippetSupport = false
+        }
+      }
+    }
+  },
 })
 
 lsp.setup()

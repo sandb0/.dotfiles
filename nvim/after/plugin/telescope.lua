@@ -1,22 +1,22 @@
 local builtin = require('telescope.builtin')
 
 require('telescope').setup {
-    extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-        }
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
     }
+  }
 }
 
 require('telescope').load_extension('fzf')
 
 vim.keymap.set('n', ';f', function()
   builtin.find_files({
-      no_ignore = false,
-      hidden    = true,
+    no_ignore = false,
+    hidden    = true,
   })
 end)
 
@@ -28,7 +28,7 @@ vim.keymap.set('n', ';s', function()
   end
 
   builtin.grep_string({
-      search = input_string,
+    search = input_string,
   })
 end)
 
@@ -38,11 +38,10 @@ vim.keymap.set('n', ';e', builtin.diagnostics, {})
 
 vim.keymap.set('n', ';g', function()
   builtin.git_files({
-      hidden = true
+    hidden = true
   })
 end, {})
 
--- Replaced by `grep_string`.
--- vim.keymap.set('n', ';s', function()
---   builtin.live_grep()
--- end)
+vim.keymap.set('n', ';l', function()
+  builtin.live_grep()
+end)

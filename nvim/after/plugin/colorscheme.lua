@@ -6,6 +6,8 @@ function UseRosePineColors()
   -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
+-- UseRosePineColors()
+
 -- Load theme colors config --
 function UseEverforestColors()
   color = color or "everforest"
@@ -45,6 +47,8 @@ function UseEverforestColors()
   -- })
 end
 
+-- UseEverforestColors()
+
 function UseGruvboxColors()
   vim.cmd('colorscheme gruvbox')
   vim.cmd('highlight clear SignColumn')
@@ -53,8 +57,65 @@ function UseGruvboxColors()
   vim.cmd('highlight clear GitSignsDelete')
 end
 
-UseGruvboxColors()
+-- UseGruvboxColors()
 
--- UseEverforestColors()
+function UseGighubColors()
+  vim.cmd('highlight clear SignColumn')
+  vim.cmd('highlight clear GitSignsAdd')
+  vim.cmd('highlight clear GitSignsChange')
+  vim.cmd('highlight clear GitSignsDelete')
+end
 
--- UseRosePineColors()
+-- UseGighubColors()
+
+function UseCatppuccinColors()
+  local catppuccin = require("catppuccin")
+
+  if not catppuccin then
+    return
+  end
+
+  vim.g.catppuccin_flavour = "mocha"
+
+  catppuccin.setup({
+    flavour = "mocha",
+    term_colors = true,
+    transparent_background = true,
+    no_italic = false,
+    no_bold = false,
+    styles = {
+      comments = {},
+      conditionals = {},
+      loops = {},
+      functions = {},
+      keywords = {},
+      strings = {},
+      variables = {},
+      numbers = {},
+      booleans = {},
+      properties = {},
+      types = {},
+    },
+    color_overrides = {
+      mocha = {
+        base = "#000000",
+        mantle = "#000000",
+        crust = "#000000",
+      },
+    },
+    highlight_overrides = {
+      mocha = function(C)
+        return {
+          TabLineSel = { bg = C.pink },
+          CmpBorder = { fg = C.surface2 },
+          Pmenu = { bg = C.none },
+          TelescopeBorder = { link = "FloatBorder" },
+        }
+      end,
+    },
+  })
+
+  vim.cmd([[colorscheme catppuccin]])
+end
+
+UseCatppuccinColors()

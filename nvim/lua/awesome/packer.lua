@@ -22,20 +22,25 @@ return require('packer').startup(function(use)
   --     vim.cmd('colorscheme everforest')
   --   end
   -- })
-  use({
-    'ellisonleao/gruvbox.nvim',
-    as = 'gruvbox',
-    config = function()
-      vim.cmd('colorscheme gruvbox')
-    end
-  })
+  -- use({
+  --   'ellisonleao/gruvbox.nvim',
+  --   as = 'gruvbox',
+  --   config = function()
+  --     vim.cmd('colorscheme gruvbox')
+  --   end
+  -- })
   -- use({
   --   'projekt0n/github-nvim-theme',
   --   as = 'github-theme',
   --   config = function()
-  --     vim.cmd('colorscheme github_dark_colorblind')
+  --     vim.cmd('colorscheme github_light_colorblind')
   --   end
   -- })
+  --
+  use({
+    'catppuccin/nvim',
+    as = 'catppuccin',
+  })
 
   use {
     'VonHeikemen/lsp-zero.nvim',

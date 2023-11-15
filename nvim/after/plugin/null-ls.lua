@@ -11,7 +11,9 @@ null_ls.setup {
     end
   end,
   sources = {
-    null_ls.builtins.completion.spell,
+    -- Disable LSP "Text" suggestions.
+    -- null_ls.builtins.completion.spell,
+
     null_ls.builtins.diagnostics.zsh,
     -- null_ls.builtins.formatting.prettier,
     -- null_ls.builtins.diagnostics.eslint,

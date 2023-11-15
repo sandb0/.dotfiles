@@ -25,18 +25,11 @@ gitsigns.setup({
       return '<Ignore>'
     end, { expr = true })
 
-    -- Actions
-    -- Show changes of current line.
+    -- Action: (:Gitsigns preview_hunk) Show changes of current line.
     map('n', '<leader>hp', gs.preview_hunk)
-    -- Show all changes of commit (separated in hunks) when the lines has changed.
-    map('n', '<leader>hb', function() gs.blame_line { full = true } end)
-    -- Show who changed the current line.
+    -- Action: (:Gitsigns blame_line) Show changes and blame.
+    map('n', '<leader>gb', function() gs.blame_line { full = true } end)
+    -- Action: (:Gitsigns toggle_current_line_blame) Toggle blame by line.
     map('n', '<leader>gt', gs.toggle_current_line_blame)
-    -- Show all changes of file before commit.
-    -- Very useful before make a commit (self code review).
-    map('n', '<leader>hd', gs.diffthis)
-    -- Show all changes of file before branch merge.
-    -- Very useful before make a push (self code review).
-    map('n', '<leader>hD', function() gs.diffthis('~') end)
   end
 })

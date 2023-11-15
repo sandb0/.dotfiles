@@ -25,6 +25,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ['<C-Space>'] = cmp.mapping.complete(),
+  -- ['<Tab>'] = cmp.mapping.abort(),
+  -- ['<S-Tab>'] = cmp.mapping.abort(),
 })
 
 lsp.setup_nvim_cmp({
@@ -56,18 +58,8 @@ end)
 -- })
 
 lsp.configure('lua_ls', {
-  capabilities = {
-    textDocument = {
-      completion = {
-        completionItem = {
-          snippetSupport = false
-        }
-      }
-    }
-  },
   settings = {
     Lua = {
-      completion = { callSnippet = "Replace" },
       diagnostics = {
         globals = { 'vim' }
       }
@@ -81,39 +73,9 @@ lsp.configure('yamlls', {
   },
 })
 
-lsp.configure('tsserver', {
-  settings = {
-    typescript = {
-      snippetSupport = false
-    }
-  }
-})
-
-lsp.configure('jsonls', {
-  settings = {
-    json = {
-      snippetSupport = false
-    }
-  }
-})
-
 lsp.configure('clangd', {
   capabilities = {
     offsetEncoding = { 'utf-16' }
-  },
-})
-
--- Still do not disable the snippets in Rust. :(
-lsp.configure('rust_analyzer', {
-  capabilities = {
-    textDocument = {
-      completion = {
-        snippetSupport = false,
-        completionItem = {
-          snippetSupport = false
-        }
-      }
-    }
   },
 })
 

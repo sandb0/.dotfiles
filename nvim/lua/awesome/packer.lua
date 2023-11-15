@@ -36,10 +36,17 @@ return require('packer').startup(function(use)
   --     vim.cmd('colorscheme github_light_colorblind')
   --   end
   -- })
-  --
+  -- use({
+  --   'catppuccin/nvim',
+  --   as = 'catppuccin',
+  -- })
+  -- use({
+  --   'AstroNvim/astrotheme',
+  --   as = 'astrodark',
+  -- })
   use({
-    'catppuccin/nvim',
-    as = 'catppuccin',
+    'phha/zenburn.nvim',
+    as = 'zenburn',
   })
 
   use {
@@ -74,12 +81,23 @@ return require('packer').startup(function(use)
     tag = 'nightly'
   }
 
+  -- use {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v3.x",
+  --   requires = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --   }
+  -- }
+
   use { 'numToStr/Comment.nvim',
     requires = {
       'JoosepAlviste/nvim-ts-context-commentstring'
     }
   }
 
+  use 'tjdevries/cyclist.vim'
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   use({
@@ -95,7 +113,6 @@ return require('packer').startup(function(use)
   }
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use 'kyazdani42/nvim-web-devicons'
   use 'akinsho/nvim-bufferline.lua'
   use 'norcalli/nvim-colorizer.lua'
   use 'nvim-lualine/lualine.nvim'

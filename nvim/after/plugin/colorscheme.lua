@@ -118,4 +118,35 @@ function UseCatppuccinColors()
   vim.cmd([[colorscheme catppuccin]])
 end
 
-UseCatppuccinColors()
+function UseAstroDarkColors()
+  local astro = require("astrotheme")
+
+  if not astro then
+    return
+  end
+
+  astro.setup({
+    palette = "astrodark",
+    background = {
+      dark = "astrodark",
+    },
+  })
+
+  vim.cmd([[colorscheme astrodark]])
+end
+
+function UseZenburnColors()
+  local zenburn = require("zenburn")
+
+  if not zenburn then
+    return
+  end
+
+  zenburn.setup()
+
+  vim.cmd([[colorscheme zenburn]])
+end
+
+-- UseCatppuccinColors()
+-- UseAstroDarkColors()
+UseZenburnColors()

@@ -3,7 +3,10 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Prefix key: Alt.
-set $mod Mod1
+# set $mod Mod1
+#
+# Prefix key: Windows key.
+set $mod Mod4
 
 # Variables: Define the movements keys.
 set $up k
@@ -20,7 +23,8 @@ set $xset_rate xset r rate 200 40
 
 
 # Font.
-font pango:Source Code Pro 11
+# font pango:Source Code Pro 11
+font pango:Iosevka 11
 
 # Orientation for new workspaces.
 default_orientation horizontal
@@ -99,7 +103,4 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Screen brightness keyboard control.
 bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
-
-
-
 
